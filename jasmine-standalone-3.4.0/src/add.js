@@ -30,10 +30,10 @@ function add(a){
                                }
 
                                return sum;
-                               
+
                        }else{
                         console.log("put more than one character separated by a coma");
-                        return changetonumber;
+                        return changetonumber[0];
                        }
                 
                 }else{
