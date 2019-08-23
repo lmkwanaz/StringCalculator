@@ -45,4 +45,4 @@ function add(a){
                 return 0;
         }
 }
-add("1,-10,-20")
+add("//;\n1;2")

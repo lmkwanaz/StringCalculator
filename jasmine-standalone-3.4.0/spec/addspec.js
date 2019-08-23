@@ -11,4 +11,7 @@ describe("String calculator", function(){
     it("should return that number if one number was passed to the string", function(){
         expect(add("1")).toBe(1);
     });
+    it("should support different delimiters", function(){
+        expect(add("//;\n1;2")).toBe(3)
+    });
 });
