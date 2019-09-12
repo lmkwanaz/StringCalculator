@@ -8,41 +8,111 @@ function add(a){
 
         var up = Upperalpha.test(a);
         var low = Loweralpha.test(a);
+       
                 
         if(!(low || up)){           
                       
-                        var search = /-?[0-9]+/g;
+         var search = /-?[0-9]+/g;
+        let negNum = /-?\d+/g;
+        let puthereagain = [];
+        let puthere = a.match(negNum);
+        let i = 0;
+        
+        // let testNum = negNum.test(a);
+        // let  changetoarrays = a.match(negNum).map(function (x){
+        //         return parseInt(x, 10);
+        //     });
                        
-                        var changetonumber = a.match(search).map(function (x){
-                                return parseInt(x, 10);
-                        });
-                       
-                       if(changetonumber.length > 1){
-                               let sum = 0;
+        var changetonumber = a.match(search).map(function (x){
+            return parseInt(x, 10);
+        });
+
+
+        if(puthere[i] < 0){
+                var check = 0;
+                while( check < puthere.length){
+                        if(puthere[check] < 0){
+                                puthereagain.push(puthere[check])
+                                // check++;
                         
-                               for(let index=0; index <changetonumber.length; index++){
-                                if (changetonumber[index]<0){
-                                        console.log("STOP ADDING NEGATIVES");
-                                       throw changetonumber[index];
-                                } else{        
-                                sum += changetonumber[index];
-                                 }
-                               }
+                        }else{
+                                check++;
+                                continue;
+                         }
+                }
+                throw "stop negatives "+puthereagain;
+        }else  if(changetonumber.length > 1){
+                 let sum = 0;
+                        
+                for(let index=0; index <changetonumber.length; index++){
+        
+         if (changetonumber[index]<0){
+                 
+                      throw "STOP ADDING NEGATIVES "+changetonumber[index];
 
-                               return sum;
+                }else if(changetonumber[index] > 1000){
+                        
 
-                       }else{
-                        console.log("put more than one character separated by a coma");
-                        return changetonumber[0];
-                       }
+                } else{        
+                    sum += changetonumber[index];
+                }
+                    }
+
+            return sum;
+
+   }else{
+             console.log("put more than one character separated by a coma");
+              return changetonumber[0];
+           }
                 
-                }else{
-                        console.log("incorrect inputs!!");
-                        return false;
+         }else{
+      console.log("incorrect inputs!!");
+          return false;
                 }
         }else{
                  console.log("can't leave this files wmpty");
                 return 0;
         }
 }
-add("//;\n1;2")
+add("-1, -3");
+
+
+
+/////////////////////////////////////////////
+// var num;
+// function add(num){
+
+//     if(num !== ""){
+
+//         var search = /[0-9]+/g;
+//         var searchNeg = /-?\d+/g;
+//         var testSearch = searchNeg.test(num);
+//         var searchNum2 = num.match(search).map(Number);
+//         var searchNum3 = num.match(searchNeg).map(Number);
+
+//         if(testSearch == true){
+
+//             var count2 = 0;
+
+//             for(var j in searchNum2){
+
+//                 if(searchNum3[j]<0){
+
+//                     return "negatives not allowed";
+
+//                 }else if(searchNum2[j]>1000){
+//                         console.log(searchNum2[j])
+//                     searchNum2[j] == 0;
+//                     count2 += 0;
+
+//                 }else{
+//                     count2 += searchNum3[j];
+//                 }
+//             }
+//             return count2;
+//         }
+        
+//     }else{
+//         return 0;
+//     }
+// }
