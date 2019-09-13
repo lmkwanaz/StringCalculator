@@ -35,7 +35,7 @@ function add(a){
                                 check++;
                          }
                 }
-                throw  "STOP ADDING NEGATIVES ";
+                throw "STOP ADDING NEGATIVES "+puthereagain;
         }else  if(changetonumber.length > 1){
                  let sum = 0;
                         
@@ -43,7 +43,7 @@ function add(a){
         
          if (changetonumber[index]<0){
                  
-                      throw new Error ("STOP ADDING NEGATIVE, ")+changetonumber[index];
+                      throw  "STOP ADDING NEGATIVE "+changetonumber[index];
 
                 }else if(changetonumber[index] > 1000){
                         
@@ -69,8 +69,4 @@ function add(a){
                 return 0;
         }
 }
-
-
-
-
-
+console.log(add("10003, 5"));
