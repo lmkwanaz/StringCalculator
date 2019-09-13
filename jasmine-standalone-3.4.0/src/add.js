@@ -17,11 +17,6 @@ function add(a){
         let puthereagain = [];
         let puthere = a.match(negNum);
         let i = 0;
-        
-        // let testNum = negNum.test(a);
-        // let  changetoarrays = a.match(negNum).map(function (x){
-        //         return parseInt(x, 10);
-        //     });
                        
         var changetonumber = a.match(search).map(function (x){
             return parseInt(x, 10);
@@ -33,14 +28,14 @@ function add(a){
                 while( check < puthere.length){
                         if(puthere[check] < 0){
                                 puthereagain.push(puthere[check])
-                                // check++;
+                                 check++;
                         
                         }else{
+                                i++
                                 check++;
-                                continue;
                          }
                 }
-                throw "stop negatives "+puthereagain;
+                throw  "STOP ADDING NEGATIVES ";
         }else  if(changetonumber.length > 1){
                  let sum = 0;
                         
@@ -48,7 +43,7 @@ function add(a){
         
          if (changetonumber[index]<0){
                  
-                      throw "STOP ADDING NEGATIVES "+changetonumber[index];
+                      throw new Error ("STOP ADDING NEGATIVE, ")+changetonumber[index];
 
                 }else if(changetonumber[index] > 1000){
                         
@@ -74,45 +69,8 @@ function add(a){
                 return 0;
         }
 }
-add("-1, -3");
 
 
 
-/////////////////////////////////////////////
-// var num;
-// function add(num){
 
-//     if(num !== ""){
 
-//         var search = /[0-9]+/g;
-//         var searchNeg = /-?\d+/g;
-//         var testSearch = searchNeg.test(num);
-//         var searchNum2 = num.match(search).map(Number);
-//         var searchNum3 = num.match(searchNeg).map(Number);
-
-//         if(testSearch == true){
-
-//             var count2 = 0;
-
-//             for(var j in searchNum2){
-
-//                 if(searchNum3[j]<0){
-
-//                     return "negatives not allowed";
-
-//                 }else if(searchNum2[j]>1000){
-//                         console.log(searchNum2[j])
-//                     searchNum2[j] == 0;
-//                     count2 += 0;
-
-//                 }else{
-//                     count2 += searchNum3[j];
-//                 }
-//             }
-//             return count2;
-//         }
-        
-//     }else{
-//         return 0;
-//     }
-// }
